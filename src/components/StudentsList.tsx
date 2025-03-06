@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Counter from "./Counter";
 
 interface Student {
   id: number;
@@ -57,6 +58,7 @@ const StudentsList: React.FC = () => {
           ))}
         </tbody>
       </table>
+      <Counter/>
     </div>
   );
 };
