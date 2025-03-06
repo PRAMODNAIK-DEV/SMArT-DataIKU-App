@@ -2,6 +2,9 @@ import axios from "axios";
 import "./App.css";
 import StudentsList from "./components/StudentsList";
 import { useEffect } from "react";
+import { BrowserRouter } from "react-router-dom";
+import Navbar from "./pages/NavBar";
+import AppRoutes from "./routes/AppRoutes";
 
 const logUserActivity = async (event: string, details: object) => {
   try {
@@ -22,20 +25,26 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        Hello Pramod
-        <StudentsList />
-        
-        <button
-          onClick={() =>
-            logUserActivity("BUTTON_CLICK", { button: "Test Button" })
-          }
-        >
-          Click Me
-        </button>
-      </header>
-    </div>
+    // <div className="App">
+    //   <header className="App-header">
+    //     Hello Pramod
+    //     <StudentsList />
+
+    //     <button
+    //       onClick={() =>
+    //         logUserActivity("BUTTON_CLICK", { button: "Test Button" })
+    //       }
+    //     >
+    //       Click Me
+    //     </button>
+    //   </header>
+    // </div>
+    <BrowserRouter>
+      <Navbar />
+      <div className="content">
+        <AppRoutes />
+      </div>
+    </BrowserRouter>
   );
 }
 

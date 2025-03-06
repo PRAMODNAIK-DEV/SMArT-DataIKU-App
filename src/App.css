@@ -2,6 +2,21 @@
   text-align: center;
 }
 
+/* Adjust Main Content to Avoid Overlapping Sidebar */
+.content {
+  margin-left: 250px; /* Same width as the sidebar */
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content {
+    margin-left: 200px;
+  }
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
